@@ -23,12 +23,13 @@
  * @{ 
  */
 
+
 /**
  * Init Nextion.  
  * 
  * @return true if success, false for failure. 
  */
-bool nexInit(void);
+bool nexInit(uint32_t hardwareSerialSpeed = dbSerialSpeed, uint32_t softwareSerialSpeed = nexSerialSpeed);
 
 /**
  * Listen touch event and calling callbacks attached before.

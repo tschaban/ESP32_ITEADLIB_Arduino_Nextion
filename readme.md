@@ -2,6 +2,12 @@
 
 # Nextion
 
+# ESP32 Modification
+
+* Modified method to initialize the library with setting Serials
+    nextInit(harwareSerialSpeed,softwareSerialSpeed) 
+* A couple of fixes in the library itself
+
 --------------------------------------------------------------------------------
 
 # Introduction

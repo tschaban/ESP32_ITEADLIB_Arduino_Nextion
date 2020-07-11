@@ -217,16 +217,13 @@ bool recvRetCommandFinished(uint32_t timeout)
 }
 
 
-bool nexInit(void)
+bool nexInit(uint32_t hardwareSerialSpeed, uint32_t softwareSerialSpeed)
 {
     bool ret1 = false;
     bool ret2 = false;
     
-    //dbSerialBegin(9600);
-    //nexSerial.begin(9600);
-    dbSerialBegin(115200);
-    nexSerial.begin(9600);
-
+    dbSerialBegin(softwareSerialSpeed);
+    nexSerial.begin(hardwareSerialSpeed);
     sendCommand("");
     sendCommand("bkcmd=1");
     ret1 = recvRetCommandFinished();
@@ -234,6 +231,7 @@ bool nexInit(void)
     ret2 = recvRetCommandFinished();
     return ret1 && ret2;
 }
+
 
 void nexLoop(NexTouch *nex_listen_list[])
 {

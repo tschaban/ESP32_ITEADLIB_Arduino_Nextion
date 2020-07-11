@@ -18,7 +18,7 @@ bool NexRtc::write_rtc_time(char *time)
 {
     char year[5],mon[3],day[3],hour[3],min[3],sec[3];
     String cmd = String("rtc");
-    int i;
+    // int i; unused variable
     
     if(strlen(time) >= 19)
     {
@@ -64,6 +64,8 @@ bool NexRtc::write_rtc_time(char *time)
         sendCommand(cmd.c_str());
         recvRetCommandFinished();
         
+return true;
+
     }
     else
     {
